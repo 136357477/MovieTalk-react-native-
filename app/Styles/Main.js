@@ -8,7 +8,7 @@ let styles = StyleSheet.create({
     borderBottomWidth:1,
     borderColor:'rgba(100,53,201,0.1)',
     paddingBottom:6,
-    marginBottom:6,
+    paddingTop:6,
     flex:1,
   },
   itemContent:{
@@ -21,6 +21,7 @@ let styles = StyleSheet.create({
     fontFamily:'Helvetica Neue',
     fontWeight:'300',
     color:'#6435c9',
+    marginBottom:6,
   },
   itemMeta:{
     fontSize:16,

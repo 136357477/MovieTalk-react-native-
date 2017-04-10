@@ -5,7 +5,6 @@
  */
 
  import React, { Component } from 'react';
- import styles from '../Styles/Main';
  import {
    Text,
    View,
@@ -15,7 +14,7 @@
    TouchableHighlight ,
  } from 'react-native';
 
-
+ import styles from '../Styles/Main';
 
 // import React, { Component } from 'react';
 // import styles from '../Styles/Main';
@@ -28,8 +27,8 @@
 //   TouchableHighlight,
 // } from 'react-native';
 
-const REQUEST_URL = 'https://api.douban.com/v2/movie/top250'
-class MovieList extends Component {
+const REQUEST_URL = 'https://api.douban.com/v2/movie/us_box'
+class USBox extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -52,32 +51,26 @@ class MovieList extends Component {
             })
             .done();
     }
-    showMovieDetail(movie) {
-      this.props.navigator.push({
-        title: movie.title,
-        component: MovieDetail,
-        passProps: {movie},
-      });
-    }
+
     renderMovieList(movie){
       return(
         <TouchableHighlight
           underlayColor="rgba(34,26,38,0.1)"
           onPress={()=>{
-            console.log(`<${movie.title}>被点了`);
+            console.log(`<${movie.subject.title}>被点了`);
           }}
           >
           <View style={styles.item}>
             <View style={styles.itemImage}>
               <Image
-                source={{uri:movie.images.large}}
+                source={{uri:movie.subject.images.large}}
                 style={styles.image}
                />
             </View>
             <View style={styles.itemContent}>
-              <Text style={styles.itemHeader}>{movie.title}</Text>
-              <Text style={styles.itemMeta}>{movie.original_title} ( {movie.year} )</Text>
-              <Text style={styles.redText}>{movie.rating.average}</Text>
+              <Text style={styles.itemHeader}>{movie.subject.title}</Text>
+              <Text style={styles.itemMeta}>{movie.subject.original_title} ( {movie.subject.year} )</Text>
+              <Text style={styles.redText}>{movie.subject.rating.average}</Text>
             </View>
           </View>
         </TouchableHighlight>
@@ -107,4 +100,4 @@ class MovieList extends Component {
     }
 }
 
-export { MovieList as default } ;
+export { USBox as default } ;
