@@ -68,7 +68,7 @@ let styles = StyleSheet.create({
     flexDirection:'row',
     backgroundColor:'#eae7ff',
     flex:1,
-    paddingTop:23,
+    // paddingTop:23,
   },
   itemText:{
     fontSize:33,
