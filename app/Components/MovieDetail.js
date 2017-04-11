@@ -53,9 +53,11 @@
      }
 
      return(
-       <View style={styles.container}>
-         <View style={styles.loading}>
-           <Text>{this.state.movieDetail.summary}</Text>
+       <View style={[styles.container,{paddingTop:70}]}>
+         <View style={[styles.item,{flexDirection:'column'}]}>
+           <Text style={styles.itemText}>
+             {this.state.movieDetail.summary}
+           </Text>
          </View>
        </View>
 
