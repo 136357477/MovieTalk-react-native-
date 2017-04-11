@@ -9,6 +9,7 @@ import style from './app/Styles/Main';
 import MovieList from './app/Components/MovieList';
 import USBox from './app/Components/USBox';
 import icons from './app/Assets/Icons';
+import Featured from './app/Components/Featured';
 import {
   AppRegistry,
   StyleSheet,
@@ -43,7 +44,8 @@ class MovieTalk extends Component {
                 selectedTab: 'featured'
               });
             }}>
-            <MovieList />
+            {/* <MovieList /> */}
+            <Featured/>
           </TabBarIOS.Item>
           <TabBarIOS.Item
             // systemIcon="most-viewed"
