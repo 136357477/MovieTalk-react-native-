@@ -20,7 +20,8 @@
      super(props);
      console.log(this.props.movie);
      this.state = {
-       movieDetail:''
+       movieDetail:'',
+       loaded:false,
      };
      const REQUEST_URL = `https://api.douban.com/v2/movie/subject/${this.props.movie.id}`;
      this.fetchData(REQUEST_URL);
@@ -30,13 +31,27 @@
      .then(response => response.json())
      .then(responseData => {
        this.setState({
-         movieDetail:responseData
+         movieDetail:responseData ,
+         loaded:true ,
        });
      })
      .done();
    }
 
    render(){
+     if(!this.state.loaded){
+       return(
+         <View style={styles.container}>
+           <View style={styles.loading}>
+             <ActivityIndicator
+               size="large"
+               color="#6435c9"
+             />
+           </View>
+         </View>
+       );
+     }
+
      return(
        <View style={styles.container}>
          <View style={styles.loading}>
