@@ -6,6 +6,7 @@
 
  import React, { Component } from 'react';
  import styles from '../Styles/Main';
+ import MovieDetail from './MovieDetail';
  import {
    Text,
    View,
@@ -59,13 +60,16 @@ class MovieList extends Component {
         passProps: {movie},
       });
     }
+
+
     renderMovieList(movie){
       return(
         <TouchableHighlight
           underlayColor="rgba(34,26,38,0.1)"
-          onPress={()=>{
-            console.log(`<${movie.title}>被点了`);
-          }}
+          onPress={()=> this.showMovieDetail(movie)}
+          // onPress={()=>{
+          //   console.log(`<${movie.title}>被点了`);
+          // }}
           >
           <View style={styles.item}>
             <View style={styles.itemImage}>
@@ -100,7 +104,7 @@ class MovieList extends Component {
         <View style={styles.container}>
             <ListView
               dataSource={this.state.movies}
-              renderRow= {this.renderMovieList}
+              renderRow= {this.renderMovieList.bind(this)}
             />
         </View>
       );
