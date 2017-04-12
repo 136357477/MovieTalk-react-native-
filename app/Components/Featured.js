@@ -29,7 +29,7 @@
         barTintColor="darkslateblue"
         titleTextColor="rgba(255,255,255,0.8)"
         tintColor="rgba(255,255,255,0.8)"
-        translucent={true} //导航栏是否为半透明
+        translucent={false} //导航栏是否为半透明
       />
      );
    }
