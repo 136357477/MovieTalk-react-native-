@@ -14,6 +14,7 @@
    ActivityIndicator,
    TouchableHighlight,
    NavigatorIOS,
+   TextInput,
    } from 'react-native';
 
    class SearchForm extends Component {
@@ -23,9 +24,13 @@
     }
     render(){
       return(
-        <View style={styles.loading}>
-          <Text>搜索</Text>
+        <View style={[styles.container ,{paddingTop:60} ]}>
+          <TextInput
+            style={{height:50}}
+            placeholder="搜索 ..."
+           />
         </View>
+
       );
     }
 

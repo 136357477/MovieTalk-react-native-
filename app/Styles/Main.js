@@ -71,12 +71,17 @@ let styles = StyleSheet.create({
     color:'rgba(0,0,0,0.8)',
     lineHeight:26,
   },
-  container:{
-    flexDirection:'row',
-    backgroundColor:'#eae7ff',
-    flex:1,
-    // paddingTop:23,
+  container: {
+  backgroundColor: '#eae7ff',
+  paddingTop: 0,
+  flex: 1,
   },
+  // container:{
+  //   flexDirection:'row',
+  //   backgroundColor:'#eae7ff',
+  //   flex:1,
+  //   // paddingTop:23,
+  // },
 
 });
 
