@@ -24,11 +24,19 @@
     }
     render(){
       return(
-        <View style={[styles.container ,{paddingTop:60} ]}>
-          <TextInput
-            style={{height:50}}
-            placeholder="搜索 ..."
-           />
+        <View style={[styles.container ,{paddingTop:60}]}>
+          <View style={{
+            paddingTop:7,
+            paddingLeft:7,
+            paddingRight:7,
+            borderColor:"rgba(100,53,201,0.1)",
+            borderBottomWidth:1,
+          }}>
+            <TextInput
+              style={{height:50}}
+              placeholder="搜索 ..."
+             />
+          </View>
         </View>
 
       );
