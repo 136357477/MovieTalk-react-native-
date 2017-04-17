@@ -23,14 +23,24 @@
       super(props);
       this.state = {
         query: '',
+        loaded:true,
+        opacity: 0,
       }
     }
 
     fetchData(){
+      this.setState({
+        loaded:false ,
+        opacity: 1,
+      });
       const REQUEST_URL = `https://api.douban.com/v2/movie/search?q=${this.state.query}`
       fetch(REQUEST_URL)
         .then(response => response.json())
         .then(responseData => {
+          this.setState({
+            loaded:true ,
+            opacity:0 ,
+          });
           console.log(responseData);
           this.props.navigator.push({
             title:responseData.title,
@@ -67,7 +77,17 @@
             }}
             onSubmitEditing={this.fetchData.bind(this)}
           />
-
+          <ActivityIndicator
+            size="small"
+            color="#6435c9"
+            animating={!this.state.loaded}
+            style={{
+              position:'absolute',
+              right:10 ,
+              top: 20 ,
+              opacity: this.state.opacity ,
+            }}
+          />
 
             {/* <TextInput
               style={{height:50}}
